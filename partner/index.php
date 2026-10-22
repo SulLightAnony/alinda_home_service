@@ -1,0 +1,1 @@
+<?php header("location: menus/login.php"); ?>

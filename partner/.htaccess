@@ -1,0 +1,17 @@
+
+
+
+
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Atur agar cache hanya berlaku 1 hari
+  ExpiresByType image/jpg "access plus 1 day"
+  ExpiresByType image/jpeg "access plus 1 day"
+  ExpiresByType image/png "access plus 1 day"
+  ExpiresByType image/gif "access plus 1 day"
+  ExpiresByType image/webp "access plus 1 day"
+  ExpiresByType text/css "access plus 1 day"
+  ExpiresByType application/javascript "access plus 1 day"
+</IfModule>

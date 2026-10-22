@@ -1,0 +1,140 @@
+:root {
+    --colortheme:rgb(71,200,242);
+    --colortheme-hover:rgb(65, 189, 231);
+    --border-radius-div:7px;
+    --border-radius-input:4px;
+}
+
+#Blackbarrier {
+  pointer-events: all;
+  position:fixed;
+  width: 100vw;
+  height: 100vh;
+  top:0px;
+  left:0px;
+  background: rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+  z-index: 10000;
+  opacity: 100%;
+
+  &.hidden {
+    pointer-events: none;
+    opacity: 0%;
+  }
+}
+
+#ProfilePictureShow {
+    pointer-events: all;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+    z-index: 10001;
+    opacity: 100%;
+
+    & img {
+        border-radius: 50%;
+        border: 4px solid white;
+        width:80vw;
+    }
+
+    &.hidden {
+        pointer-events: none;
+        opacity: 0%;
+    }
+}
+
+#ImageCardShow {
+    pointer-events: all;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+    z-index: 10001;
+    opacity: 100%;
+
+    & img {
+        border: 4px solid white;
+        width:80vw;
+    }
+
+    &.hidden {
+        pointer-events: none;
+        opacity: 0%;
+    }
+}
+
+.developer-original-modal-confirm-logout{
+    position:fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    width:90vw;
+    height:30vh;
+    background:white;
+    padding: 10px;
+    border-radius: var(--border-radius-div);
+    pointer-events: all;
+    opacity: 100%;
+    transition:0.3s;
+    z-index: 10001;
+
+    & p{
+        display: block;
+        width:100%;
+        font-size: 17px;
+        text-align: center;
+        background: rgb(236, 236, 236);
+        padding: 20px 0px;
+        border-radius: var(--border-radius-div);
+    }
+
+    & button{
+        width:100px;
+        height: 40px;
+        background: var(--colortheme);
+        border:none;
+        border-radius:var(--border-radius-div);
+        font-weight: bold;
+        font-size:15px;
+        color:white;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+            background: var(--colortheme-hover);
+        }
+    }
+
+    & div button:nth-child(1){
+        background: red;
+
+        &:hover {
+            background: rgb(209, 0, 0);
+        }
+    }
+
+    &.hidden{
+        pointer-events: none;
+        opacity: 0%;
+    }
+}
+
+.appBottomMenu .item{
+    & .developer-original-menu-icon{
+        width:35px;
+    }
+
+    &.active{
+        & .developer-original-menu-icon{
+            width:40px;
+            filter: drop-shadow(0px 0px 5px rgb(71,200,242));
+        }
+    }
+}

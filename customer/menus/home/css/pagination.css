@@ -1,0 +1,219 @@
+/* Hapus body jika memakai template */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: rgb(243, 243, 243);
+    overflow-x: hidden;
+}
+
+:root {
+    --colortheme:rgb(71,200,242);
+    --colortheme-hover:rgb(62, 186, 228);
+    --border-radius-div:7px;
+    --border-radius-input:4px;
+}
+
+.developer-original-table {
+    border-radius:var(--border-radius-div);
+    overflow-x: auto;
+
+    & table {
+        text-align:center;
+        border: none;
+        border-collapse: collapse;
+        width:100%; /* Ganti ke px jika column ada banyak */
+
+        & thead{
+            color:white;
+            font-weight: bold;
+            background: var(--colortheme);
+            font-size: 13px;
+
+            & th {
+                text-align: center;
+                padding: 12px 15px;
+            }
+        }
+
+        & tbody {
+            color: rgb(41, 41, 41);
+            background: white;
+            border-bottom: 1px solid #ddd;
+            font-size: 13px;
+
+            & td{
+                text-align: center;
+                padding: 12px 15px;
+
+                &:nth-child(1){
+                    font-weight: bold;
+                    width:20px;
+                }
+
+                & span {
+                    display: flex;
+                    justify-content: center;
+                    gap:5px;
+
+                    & button {
+                        padding: 5px 13px;  /* Ganti 10px ke 5px jika memakai Bootstrap */
+                        font-size: 12px; /* Ganti 16px ke 14px jika memakai Bootstrap */
+                        border:none;
+                        border-radius:var(--border-radius-div);
+                        font-weight: bold;
+                        color:white;
+                        cursor: pointer;
+                        transition: 0.3s;
+                        
+                        &.button-show{
+                            background: var(--colortheme);
+
+                            &:hover {
+                                background: var(--colortheme-hover);
+                            }
+                        }
+
+                        &.button-edit {
+                            background: rgb(236, 220, 0);
+
+                            &:hover {
+                                background: rgb(214, 182, 0);
+                            }
+                        }
+
+                        &.button-hapus {
+                            background: rgb(236, 0, 0);
+
+                            &:hover {
+                                background: rgb(194, 0, 0);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+a[OrderInformation]{
+    position: absolute;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width:90%;
+    border-radius: 7px;
+    padding:10px;
+    color: white;
+    text-align: center;
+    background: var(--colortheme);
+    left: 50%;
+    transform: translateX(-50%);
+
+    &:hover{
+        background: var(--colortheme-hover);
+    }
+}
+
+.developer-original-transactions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 10px;
+
+    & img{
+        width:100px;
+        height:100px;
+        border-radius: 50%;
+    }
+
+    & div[description]{
+        display: flex;
+        flex-direction: column;
+
+        & span[title]{
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        & span[date]{
+            font-size: 12px;
+            color:rgba(0, 0, 0, 0.5)
+        }
+
+        & span[addresstitle]{
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        & span[address]{
+            font-size: 12px;
+        }
+
+        & span[pricetitle]{
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        & span[price]{
+            font-size: 14px;
+            color: rgb(0, 119, 255);
+        }
+
+        & span[statustitle]{
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        & span[detailtitle]{
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        & span[detail]{
+            font-size: 13px;
+        }
+    }
+
+    &.detail{
+        flex-direction: column;
+
+        & img{
+            width:100px;
+            height:100px;
+        }
+    }
+}
+
+.developer-original-section-title{
+    display: flex;
+    gap: 10px;
+    width: 100vw;
+    max-width: 500px;
+    margin-left: 15px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+
+    &>span{
+        display: block;
+        width: 35px;
+        height: 35px;
+        background: var(--colortheme);
+        border-radius: 50%;
+    }
+
+    &>div{
+        display: flex;
+        align-items: center;
+        width: 300px;
+        height: 35px;
+        background: var(--colortheme);
+        border-radius: 15px;
+
+        &>span{
+            color: white;
+            font-weight: bold;
+            margin-left: 15px;
+        }
+    }
+}

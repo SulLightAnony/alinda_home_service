@@ -1,0 +1,27 @@
+home service,
+alinda home service
+1. aplikasi customer (hp)
+2. aplikasi mitra (hp) -> (verifikasi - test di pt dlu)
+3. aplikasi admin (dekstop)
+
+1. aplikasi customer
+	- maps (link)
+	- pendaftaran perangkat detail
+	- atur jadwal
+	- di sekitar radius (by kecamatan query)
+	- jika di sekitar g ada bisa di pilihin admin
+	- chat 
+	- bantuan/ hubungi customer service/wa
+	- status sedang di jalan
+
+2. aplikasi mitra
+	- orderan 
+	- isi form kerja (ceklist dan foto)
+	- order masuk ke perusahaan dlu 
+
+3. aplikasi admin 
+	- service di tentukan oleh perusahaan 
+	- nampilkan iklan (beranda)
+	- informasi perusahaan (beranda)
+	- training vidio (beranda)
+	- temuan (barang temuan & kehilangan) (fitur)

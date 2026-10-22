@@ -1,0 +1,68 @@
+<?php $conn = new mysqli("localhost", "root", "", "app_home_service"); ?>
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>Chat Customer Service</title>
+    <meta name="description" content="Mobilekit HTML Mobile UI Kit">
+    <meta name="keywords" content="bootstrap 4, mobile template, cordova, phonegap, mobile, html" />
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/icon/192x192.png">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="manifest" href="../__manifest.json">
+</head>
+
+<body class="bg-white">
+<!-- App Capsule -->
+    <link rel="stylesheet" href="style.css">
+    <div id="appCapsule">
+        <div class="appHeader bg-primary text-light">
+            <div class="left">
+                <a href="login.php" class="headerButton goBack">
+                    <ion-icon name="chevron-back-outline"></ion-icon>
+                </a>
+            </div>
+            <div class="pageTitle">Chat Customer Service</div>
+            <div class="right"></div>
+        </div>
+
+        <div class="section full mt-2">
+            <?php
+                $customerServices = mysqli_query($conn, "SELECT * FROM tbl_admin_customer_service");
+                while($row = mysqli_fetch_assoc($customerServices)){
+            ?>
+            <div class="wide-block pt-2 pb-2">
+                <a href="https://wa.me/<?= $row['PhoneNumber'] ?>" target="_blank">
+                    <span class="developer-original-transactions">
+                        <img src="<?= str_replace("../../../../", "../../", $row['Image']) ?>">
+                        <div description>
+                            <span title><?= $row['Name'] ?></span>
+                            <span address><?= $row['PhoneNumber'] ?></span>
+                        </div>
+                    </span>
+                </a>
+            </div>
+            <?php } ?>
+        </div>
+    </div>
+</body>
+
+<script src="../assets/js/lib/jquery-3.4.1.min.js"></script>
+<!-- Bootstrap-->
+<script src="../assets/js/lib/popper.min.js"></script>
+<script src="../assets/js/lib/bootstrap.min.js"></script>
+<!-- Ionicons -->
+<script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+<!-- Owl Carousel -->
+<script src="../assets/js/plugins/owl-carousel/owl.carousel.min.js"></script>
+<!-- jQuery Circle Progress -->
+<script src="../assets/js/plugins/jquery-circle-progress/circle-progress.min.js"></script>
+<!-- Base Js File -->
+<script src="../assets/js/base.js"></script>

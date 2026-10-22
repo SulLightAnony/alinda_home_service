@@ -1,0 +1,192 @@
+/* Hapus body jika memakai template */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: rgb(243, 243, 243);
+    overflow-x: hidden;
+}
+
+:root {
+    --colortheme:rgb(71,200,242);
+    --colortheme-hover:rgb(65, 189, 231);
+    --border-radius-div:7px;
+    --border-radius-input:4px;
+}
+
+.developer-original-table {
+    border-radius:var(--border-radius-div);
+    overflow-x: auto;
+
+    & table {
+        text-align:center;
+        border: none;
+        border-collapse: collapse;
+        width:100%; /* Ganti ke px jika column ada banyak */
+
+        & thead{
+            color:white;
+            font-weight: bold;
+            background: var(--colortheme);
+            font-size: 13px;
+
+            & th {
+                text-align: center;
+                padding: 12px 15px;
+            }
+        }
+
+        & tbody {
+            color: rgb(41, 41, 41);
+            background: white;
+            border-bottom: 1px solid #ddd;
+            font-size: 13px;
+
+            & td{
+                text-align: center;
+                padding: 12px 15px;
+
+                &:nth-child(1){
+                    font-weight: bold;
+                    width:20px;
+                }
+
+                & span {
+                    display: flex;
+                    justify-content: center;
+                    gap:5px;
+
+                    & button {
+                        padding: 5px 13px;  /* Ganti 10px ke 5px jika memakai Bootstrap */
+                        font-size: 12px; /* Ganti 16px ke 14px jika memakai Bootstrap */
+                        border:none;
+                        border-radius:var(--border-radius-div);
+                        font-weight: bold;
+                        color:white;
+                        cursor: pointer;
+                        transition: 0.3s;
+                        
+                        &.button-show{
+                            background: var(--colortheme);
+
+                            &:hover {
+                                background: var(--colortheme-hover);
+                            }
+                        }
+
+                        &.button-edit {
+                            background: rgb(236, 220, 0);
+
+                            &:hover {
+                                background: rgb(214, 182, 0);
+                            }
+                        }
+
+                        &.button-hapus {
+                            background: rgb(236, 0, 0);
+
+                            &:hover {
+                                background: rgb(194, 0, 0);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.developer-original-modal-delete {
+    position:fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    width:90vw;
+    max-width: 400px;
+    height:250px;
+    background:white;
+    padding: 10px;
+    border-radius: var(--border-radius-div);
+    pointer-events: all;
+    opacity: 100%;
+    transition:0.3s;
+    z-index: 10000;
+
+    & p{
+        display: block;
+        width:100%;
+        font-size: 15px;
+        text-align: center;
+        background: rgb(236, 236, 236);
+        padding: 20px 0px;
+        border-radius: var(--border-radius-div);
+    }
+
+    & button{
+        width:100px;
+        height: 40px;
+        background: var(--colortheme);
+        border:none;
+        border-radius:var(--border-radius-div);
+        font-weight: bold;
+        font-size:15px;
+        color:white;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+            background: var(--colortheme-hover);
+        }
+    }
+
+    &.hidden{
+        pointer-events: none;
+        opacity: 0%;
+    }
+}
+
+.developer-original-modal-image{
+    position:fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    width:500px;
+    height:400px;
+    border-radius: var(--border-radius-div);
+    pointer-events: all;
+    opacity: 100%;
+    transition:0.3s;
+    z-index: 10000;
+
+    & img{
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    &.hidden{
+        pointer-events: none;
+        opacity: 0%;
+    }
+}
+
+.developer-original-blackbarrier{
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100vw;
+    height:100vh;
+    background:rgba(0,0,0,0.4);
+    transition:0.3s;
+    z-index: 9999;
+
+    &.hidden{
+        pointer-events: none;
+        opacity: 0%;
+    }
+}

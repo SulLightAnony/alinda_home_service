@@ -1,0 +1,1 @@
+<script>window.location.href="menus/login/PHP/Login.php";</script>
